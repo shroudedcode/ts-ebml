@@ -40,7 +40,7 @@ if(com.seekable){
   let CodecID = "";
   const trackTypes = {} as {[TrackNumber: number]: {TrackType: number, CodecID: string }};
   fs.createReadStream(args[0]).on('data', (buf)=>{
-    const ebmlElms = decoder.decode(buf);
+    const ebmlElms = decoder.decode(buf as ArrayBuffer);
     ebmlElms.forEach((elm)=>{
       if(elm.type === "m" && elm.name === "TrackEntry" && elm.isEnd){
         trackTypes[TrackNumber] = {TrackType, CodecID};
@@ -71,7 +71,7 @@ if(com.seekable){
   const decoder = new Decoder();
   fs.createReadStream(args[0]).on('data', (buf)=>{
     // put ebml info
-    const ebmlElms = decoder.decode(buf);
+    const ebmlElms = decoder.decode(buf as ArrayBuffer);
     ebmlElms.forEach((elm)=>{
       const {name, type, tagStart, level} = elm;
       if(elm.type === "m"){
