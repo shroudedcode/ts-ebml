@@ -76,7 +76,7 @@ async function main(){
   video.autoplay = true;
   document.body.appendChild(video);
   
-  await new Promise((resolve)=>{ ms.addEventListener('sourceopen', ()=> resolve(), {once: true}); });
+  await new Promise<void>((resolve)=>{ ms.addEventListener('sourceopen', ()=> resolve(), {once: true}); });
 
   const sb = ms.addSourceBuffer(rec.mimeType);
   if(logging){
@@ -162,7 +162,7 @@ async function main(){
   async function appendBuffer(buf: ArrayBuffer): Promise<void>{
     sb.appendBuffer(buf);
 
-    await new Promise((resolve, reject)=>{
+    await new Promise<void>((resolve, reject)=>{
       sb.addEventListener('updateend', ()=> resolve(), {once: true});
       sb.addEventListener("error", (ev)=> reject(ev), {once: true});
     });
