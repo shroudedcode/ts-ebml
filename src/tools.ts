@@ -4,13 +4,12 @@ import * as EBML from "./EBML";
 import Encoder from "./EBMLEncoder";
 import Decoder from "./EBMLDecoder";
 import _Buffer = require("buffer/");
-import _tools = require("ebml/lib/ebml/tools");
 import _block = require("ebml-block");
 
-export const Buffer: typeof global.Buffer = _Buffer.Buffer;
+export const Buffer = _Buffer.Buffer as any as typeof global.Buffer;
 
-export const readVint: (buffer: Buffer, start: number)=> null | ({length: number; value: number; }) = _tools.readVint;
-export const writeVint: (val: number)=> Buffer = _tools.writeVint;
+export { readVint, writeVint } from './ebml-tools';
+import { writeVint } from './ebml-tools';
 
 export const ebmlBlock: (buf: Buffer)=> EBML.SimpleBlock = _block;
 export function readBlock(buf: ArrayBuffer): EBML.SimpleBlock {
