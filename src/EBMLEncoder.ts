@@ -1,7 +1,6 @@
 import * as EBML from "./EBML";
 import * as tools from "./tools";
-import {Buffer, readVint, ebmlBlock} from "./tools";
-import {Int64BE} from "int64-buffer";
+import { Buffer } from "buffer";
 import schema = require("matroska/lib/schema");
 const {byEbmlID}: {byEbmlID: { [key: number]: EBML.Schema } } = schema;
 

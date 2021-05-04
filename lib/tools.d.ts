@@ -1,6 +1,5 @@
 /// <reference types="node" />
 import * as EBML from "./EBML";
-export declare const Buffer: typeof globalThis.Buffer;
 export { readVint, writeVint } from './ebml-tools';
 export declare const ebmlBlock: (buf: Buffer) => EBML.SimpleBlock;
 export declare function readBlock(buf: ArrayBuffer): EBML.SimpleBlock;

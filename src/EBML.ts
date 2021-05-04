@@ -1,4 +1,3 @@
-import {Buffer} from "./tools";
 export type ChildElementsValue = NumberElement | StringElement | BinaryElement | DateElement;
 export type EBMLElementValue = MasterElement | ChildElementsValue;
 export type ChildElementBuffer = ChildElement & {data: Buffer};

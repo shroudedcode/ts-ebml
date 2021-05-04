@@ -2,8 +2,8 @@
 import {Decoder, Encoder, Reader} from "./";
 import * as EBML from "./";
 import {tools} from "./";
+import { Buffer } from "buffer";
 
-const Buffer = tools.Buffer;
 import QUnit     = require('qunitjs');
 import empower   = require('empower');
 import formatter = require('power-assert-formatter');

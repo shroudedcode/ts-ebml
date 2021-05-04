@@ -3,10 +3,8 @@ import {Int64BE, Uint64BE} from "int64-buffer";
 import * as EBML from "./EBML";
 import Encoder from "./EBMLEncoder";
 import Decoder from "./EBMLDecoder";
-import _Buffer = require("buffer/");
+import { Buffer } from "buffer";
 import _block = require("ebml-block");
-
-export const Buffer = _Buffer.Buffer as any as typeof global.Buffer;
 
 export { readVint, writeVint } from './ebml-tools';
 import { writeVint } from './ebml-tools';

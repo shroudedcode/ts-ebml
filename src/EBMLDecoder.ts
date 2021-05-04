@@ -1,5 +1,6 @@
-import {Buffer, readVint, ebmlBlock, convertEBMLDateToJSDate} from "./tools";
+import { readVint, ebmlBlock, convertEBMLDateToJSDate} from "./tools";
 import {Int64BE} from "int64-buffer";
+import {Buffer} from "buffer";
 import * as EBML from "./EBML";
 import * as tools from "./tools";
 import schema = require("matroska/lib/schema");
