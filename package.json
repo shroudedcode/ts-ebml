@@ -40,15 +40,14 @@
   },
   "homepage": "https://github.com/legokichi/ts-ebml#readme",
   "dependencies": {
-    "buffer": "^5.0.7",
-    "commander": "^2.11.0",
+    "buffer": "^6.0.3",
+    "commander": "^7.2.0",
     "ebml-block": "^1.1.0",
-    "events": "^1.1.1",
-    "int64-buffer": "^0.1.9",
+    "events": "^3.3.0",
+    "int64-buffer": "^1.0.1",
     "matroska": "^2.2.3"
   },
   "devDependencies": {
-    "@types/commander": "^2.9.1",
     "@types/qunit": "^2.0.31",
     "browserify": "^13.1.0",
     "empower": "^1.2.3",

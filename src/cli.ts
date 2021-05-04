@@ -17,10 +17,11 @@ com
   .parse(process.argv);
 
 const {args} = com;
+const opts = com.opts();
 
 if(args.length < 1){ process.exit(); }
 
-if(com.seekable){
+if(opts.seekable){
   const decoder = new Decoder();
   const reader = new Reader();
   reader.logging = false;
@@ -33,7 +34,7 @@ if(com.seekable){
   const body = buf.slice(reader.metadataSize);
   const refined = new Buffer(tools.concat([new Buffer(refinedMetadataBuf), body]).buffer);
   process.stdout.write(refined);
-}else if(com.keyframe){
+}else if(opts.keyframe){
   const decoder = new Decoder();
   let TrackType = -1;
   let TrackNumber = -1;
